@@ -1,312 +1,936 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Rails developer for all your web development needs | Navin Kumar - Dev on Rails</title>
-    <meta name="keywords" content="Dev on Rails, Ruby on Rails, Ruby, Rails, Rails developer, Web Developer, Ruby on Rails consultant" />
-    <meta name="description" content="Dev on Rails - for all your webdevelopment needs" />
-    <link href="https://navin.devonrails.in/" rel="canonical" /> 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navin Kumar — Engineering Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="/">Dev on Rails</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --border: rgba(255,255,255,0.07);
+      --text: #e8e8f0;
+      --muted: #7a7a9a;
+      --accent: #6ee7b7;
+      --accent2: #818cf8;
+      --accent3: #f472b6;
+      --card: #14141e;
+    }
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
+    html { scroll-behavior: smooth; }
 
-	      <div class="slider-item">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);">
-	          		<div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Navin Kumar</span></h1>
-			            <h2 class="mb-4">A Freelance Web Developer</h2>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-	      <div class="slider-item">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_2.png);">
-	          		<div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h2 class="mb-4 mt-3">I'm a <span>web developer</span> based in</h2>
-			            <h1 class="mb-4 mt-3"><span>Noida, India</span></h1>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.4;
+    }
 
-	      <div class="slider-item">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_2.png);">
-	          		<div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">Connect with me <span>@</span></h1>
-			            <h2 class="mb-4 mt-3"><span>+91-8709105216</span></h2>
-			            <h2 class="mb-4 mt-3"><span>enquiry@devonrails.in</span></h2>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-	    </div>
-    </section>
+    /* ── GLOW BLOBS ── */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.15;
+    }
+    .blob-1 { width: 600px; height: 600px; background: var(--accent2); top: -200px; left: -200px; }
+    .blob-2 { width: 500px; height: 500px; background: var(--accent); bottom: -150px; right: -100px; }
 
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-    		<div class="row d-flex">
-    			<div class="col-md-6 col-lg-5 d-flex">
-    				<div class="img-about img d-flex align-items-stretch">
-    					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/bg_1.png);">
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-    				<div class="row justify-content-start pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		          	<h1 class="big">About</h1>
-		            <h2 class="mb-4">About Me</h2>
-		            <p>Since 2016, I’ve been providing professional Ruby on Rails consulting services. Focused on every industry, business goals, and most critical issues to build the most cost-efficient and suitable solutions to advance the business needs.</p>
-		            <ul class="about-info mt-4 px-md-0 px-2">
-		            	<li class="d-flex"><span>Name:</span> <span>Navin Kumar</span></li>
-		            	<li class="d-flex"><span>Date of birth:</span> <span>August 25, 1994</span></li>
-		            	<li class="d-flex"><span>Address:</span> <span>Assiyana Homes, Noida</span></li>
-		            	<li class="d-flex"><span>Zip code:</span> <span>201301</span></li>
-		            	<li class="d-flex"><span>Email:</span> <span>enquiry@devonrails.in</span></li>
-		            	<li class="d-flex"><span>Phone: </span> <span>+91-8709105216</span></li>
-		            </ul>
-		          </div>
-		        </div>
-	        </div>
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(10,10,15,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── SECTIONS ── */
+    section { position: relative; z-index: 1; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 60px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-inner { max-width: 800px; }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(110,231,183,0.08);
+      border: 1px solid rgba(110,231,183,0.2);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(52px, 8vw, 96px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -3px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    h1 .line2 {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+    }
+
+    h1 .accent-word { color: var(--accent); }
+
+    .hero-desc {
+      font-family: 'Instrument Serif', serif;
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 48px;
+      line-height: 1.6;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #0a0a0f;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .btn-primary:hover { background: #a7f3d0; transform: translateY(-2px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text);
+      padding: 14px 28px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      text-decoration: none;
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 80px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── SHARED SECTION STYLES ── */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 60px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 64px;
+    }
+
+    .section-num {
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1;
+    }
+
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      margin-left: 20px;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--surface); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .about-text p strong { color: var(--text); font-style: italic; }
+
+    .about-sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .info-card-label {
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .info-card-value {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .contact-links { display: flex; flex-direction: column; gap: 10px; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: var(--accent); }
+    .contact-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* ── EXPERIENCE ── */
+    .timeline { position: relative; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 40px;
+      padding-bottom: 56px;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.6s ease;
+    }
+
+    .timeline-item.visible { opacity: 1; transform: translateX(0); }
+
+    .timeline-dot {
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 11px; height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .timeline-item:nth-child(2) .timeline-dot { background: var(--accent2); box-shadow: 0 0 12px var(--accent2); }
+    .timeline-item:nth-child(3) .timeline-dot { background: var(--accent3); box-shadow: 0 0 12px var(--accent3); }
+    .timeline-item:nth-child(4) .timeline-dot { background: var(--muted); box-shadow: none; }
+
+    .job-header { margin-bottom: 16px; }
+
+    .job-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .job-meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+
+    .job-company {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .timeline-item:nth-child(2) .job-company { color: var(--accent2); }
+    .timeline-item:nth-child(3) .job-company { color: var(--accent3); }
+    .timeline-item:nth-child(4) .job-company { color: var(--muted); }
+
+    .job-period {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    .job-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+    .job-bullets li {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .job-bullets li::before {
+      content: '→';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--surface); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .skill-card.visible { opacity: 1; transform: translateY(0); }
+    .skill-card:hover { border-color: rgba(110,231,183,0.3); transform: translateY(-4px); }
+
+    .skill-card-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .skill-card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .tag {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── COMPETENCIES ── */
+    .competency-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .competency-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 13px;
+      color: var(--text);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease;
+    }
+
+    .competency-item.visible { opacity: 1; transform: translateY(0); }
+
+    .competency-item::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      max-width: 700px;
+    }
+
+    .edu-icon {
+      font-size: 40px;
+      flex-shrink: 0;
+    }
+
+    .edu-degree {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .edu-school { color: var(--accent); margin-bottom: 6px; }
+    .edu-period { color: var(--muted); font-size: 12px; letter-spacing: 0.1em; }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--surface);
+      text-align: center;
+    }
+
+    .contact-wrap {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 100px 60px;
+    }
+
+    .contact-wrap h2 { margin-bottom: 20px; }
+
+    .contact-wrap p {
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    .contact-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .icon-link {
+      width: 44px; height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .icon-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
+    .icon-link svg { width: 18px; height: 18px; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 32px 60px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      #hero, .section-wrap { padding-left: 24px; padding-right: 24px; }
+      h1 { letter-spacing: -2px; }
+      .hero-stats { gap: 28px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-wrap { padding: 80px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">NK<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Available for senior opportunities</div>
+    <h1>
+      Navin<br>
+      <span class="line2">Kumar<span class="accent-word">.</span></span>
+    </h1>
+    <p class="hero-desc">
+      Application Engineering Leader crafting scalable SaaS platforms, leading distributed teams, and turning complex systems into elegant solutions.
+    </p>
+    <div class="hero-ctas">
+      <a href="#experience" class="btn-primary">
+        <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M8 1v9M4 7l4 4 4-4M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        View My Work
+      </a>
+      <a href="mailto:navinkumar2508@gmail.com" class="btn-ghost">
+        <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Get In Touch
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">9+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">10K+</div>
+        <div class="stat-label">Users Served</div>
+      </div>
+      <div>
+        <div class="stat-num">99.9%</div>
+        <div class="stat-label">Uptime Achieved</div>
+      </div>
+      <div>
+        <div class="stat-num">~30%</div>
+        <div class="stat-label">Perf Improvement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm an <strong>Engineering Leader</strong> with 9+ years of experience architecting scalable SaaS platforms and leading high-performing teams.</p>
+        <p>My expertise spans <strong>microservices architecture</strong>, cloud-native systems on AWS and Azure, DevOps automation, and distributed backend design using Ruby on Rails.</p>
+        <p>I've driven <strong>monolith-to-microservices transformations</strong>, maintained 99.9%+ system uptime, and optimized engineering delivery velocity — all while keeping a strong focus on technical strategy, mentorship, and cross-functional leadership.</p>
+      </div>
+      <div class="about-sidebar">
+        <div class="info-card">
+          <div class="info-card-label">Location</div>
+          <div class="info-card-value">Deoghar, Jharkhand, India</div>
         </div>
-    	</div>
-    </section>
-
-    <section class="ftco-section" id="services-section">
-    	<div class="container">
-    		<div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Services</h1>
-            <h2 class="mb-4">Services</h2>
-            <p>Hire Ruby on Rails Developer with the latest technical skills. Simple & Transparent Pricing | Fully Signed NDA | Code Security | Easy Exit Policy</p>
-          </div>
-        </div>
-    		<div class="row">
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Web Development</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Pair Programming</h3>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Code Deployment</h3>
-							</div>
-						</a>
-					</div>
-				</div>
-    	</div>
-    </section>
-
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-    	<div class="container">
-				<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number">Media</strong>
-                <span>Industry</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number">Health care</strong>
-                <span>Industry</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number">Ecommerce</strong>
-                <span>Industry</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number">Education</strong>
-                <span>Industry</span>
-              </div>
-            </div>
+        <div class="info-card">
+          <div class="info-card-label">Contact</div>
+          <div class="contact-links">
+            <a href="mailto:navinkumar2508@gmail.com" class="contact-link">
+              <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.5"/></svg>
+              navinkumar2508@gmail.com
+            </a>
+            <a href="tel:+919738677711" class="contact-link">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 1h3.5l1.5 3.5L6.5 6a9 9 0 003.5 3.5l1.5-1.5L15 9.5V13a2 2 0 01-2 2C5.5 15 1 9.5 1 3a2 2 0 012-2z" stroke="currentColor" stroke-width="1.5"/></svg>
+              +91 97386 77711
+            </a>
+            <a href="https://linkedin.com/in/dynamicnavin" target="_blank" class="contact-link">
+              <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7v5M4 4.5v.5M7 12V9a2 2 0 014 0v3M7 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              linkedin.com/in/dynamicnavin
+            </a>
+            <a href="https://github.com/Navin-Baliyase" target="_blank" class="contact-link">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 1C4.134 1 1 4.134 1 8c0 3.09 2.003 5.715 4.784 6.641.35.064.48-.152.48-.336v-1.18c-1.946.423-2.357-.94-2.357-.94-.318-.808-.777-1.023-.777-1.023-.635-.434.048-.425.048-.425.703.049 1.073.72 1.073.72.624 1.07 1.638.761 2.037.582.063-.452.244-.762.444-.937-1.554-.177-3.188-.777-3.188-3.457 0-.764.273-1.388.72-1.878-.072-.177-.312-.888.068-1.851 0 0 .587-.188 1.923.717A6.7 6.7 0 018 4.863a6.7 6.7 0 011.752.236c1.335-.905 1.921-.717 1.921-.717.381.963.141 1.674.069 1.851.448.49.72 1.114.72 1.878 0 2.687-1.638 3.278-3.197 3.45.251.217.475.645.475 1.3v1.926c0 .186.128.403.482.334C12.998 13.713 15 11.09 15 8c0-3.866-3.134-7-7-7z" fill="currentColor"/></svg>
+              github.com/Navin-Baliyase
+            </a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>I'm <span>Available</span> for freelancing</h2>
-						<h4><span>Save up to 40% on Development/Maintenance/Support Cost.</span></h4>
-					</div>
-				</div>
-			</div>
-		</section>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
 
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Leverage Ruby on Rails Development Services to Bring Best-of-Breed Solutions to Market</p>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="job-header">
+          <div class="job-title">Lead Software Engineer</div>
+          <div class="job-meta">
+            <span class="job-company">CloudBolt Software</span>
+            <span class="job-period">06/2022 — Present</span>
           </div>
         </div>
+        <ul class="job-bullets">
+          <li>Led a team of 5+ engineers delivering enterprise SaaS solutions serving 10K+ users</li>
+          <li>Spearheaded monolith to microservices migration improving scalability and reducing technical debt</li>
+          <li>Improved deployment frequency from bi-weekly to weekly releases via CI/CD optimization</li>
+          <li>Enhanced system performance through caching and DB tuning, reducing response time by ~30%</li>
+          <li>Maintained 99.9%+ system uptime through resilient architecture design and monitoring improvements</li>
+          <li>Partnered with product and leadership to align engineering roadmap with business objectives</li>
+        </ul>
+      </div>
 
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Aasiyana Homes, Noida, IN</p>
-	          </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="job-header">
+          <div class="job-title">Senior Software Engineer</div>
+          <div class="job-meta">
+            <span class="job-company">CloudBolt Software</span>
+            <span class="job-period">10/2020 — 06/2022</span>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://8709105216">+ 91 8709105216</a></p>
-	          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Designed scalable REST APIs and backend services handling high-volume enterprise workloads</li>
+          <li>Automated infrastructure provisioning using AWS CloudFormation</li>
+          <li>Mentored junior engineers reducing onboarding time by ~30%</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="job-header">
+          <div class="job-title">Senior Software Development Engineer</div>
+          <div class="job-meta">
+            <span class="job-company">MyUpchar.com</span>
+            <span class="job-period">09/2019 — 10/2020</span>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:enquiry@devonrails.in">enquiry@devonrails.in</a></p>
-	          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Architected backend systems supporting e-commerce operations and warehouse automation</li>
+          <li>Improved operational efficiency by ~40% through backend workflow automation</li>
+          <li>Reduced API latency and improved service reliability across distributed systems</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="job-header">
+          <div class="job-title">Software Engineer</div>
+          <div class="job-meta">
+            <span class="job-company">Kreatio Software Pvt Ltd</span>
+            <span class="job-period">08/2016 — 03/2019</span>
           </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Website</h3>
-	            <p><a href="/">devonrails.in</a></p>
-	          </div>
-          </div>
+        </div>
+        <ul class="job-bullets">
+          <li>Developed scalable Ruby on Rails applications and RESTful services</li>
+          <li>Improved test coverage and reduced production defects</li>
+          <li>Supported AWS/Azure deployments and performance optimization initiatives</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Skills</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-icon">🏗️</div>
+        <div class="skill-card-title">Backend & Languages</div>
+        <div class="skill-tags">
+          <span class="tag">Ruby</span>
+          <span class="tag">Ruby on Rails</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Microservices</span>
         </div>
       </div>
-    </section>
-		
-
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</p>
-          </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">☁️</div>
+        <div class="skill-card-title">Cloud & Infrastructure</div>
+        <div class="skill-tags">
+          <span class="tag">AWS</span>
+          <span class="tag">Azure</span>
+          <span class="tag">CloudFormation</span>
+          <span class="tag">CI/CD</span>
         </div>
       </div>
-    </footer>
-    
-  
+      <div class="skill-card">
+        <div class="skill-card-icon">🗄️</div>
+        <div class="skill-card-title">Databases & Data</div>
+        <div class="skill-tags">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Elasticsearch</span>
+          <span class="tag">ETL / ELT</span>
+          <span class="tag">AWS Glue</span>
+          <span class="tag">Data Warehousing</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🎯</div>
+        <div class="skill-card-title">Leadership & Process</div>
+        <div class="skill-tags">
+          <span class="tag">Engineering Leadership</span>
+          <span class="tag">Mentorship</span>
+          <span class="tag">Agile / Scrum</span>
+          <span class="tag">System Design</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+    </div>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+    <div class="competency-list">
+      <div class="competency-item">System Architecture & Design</div>
+      <div class="competency-item">Microservices & API Design</div>
+      <div class="competency-item">Engineering Leadership & Mentorship</div>
+      <div class="competency-item">Cloud Architecture (AWS, Azure)</div>
+      <div class="competency-item">CI/CD & DevOps Automation</div>
+      <div class="competency-item">Performance Optimization & Scalability</div>
+      <div class="competency-item">Data Engineering (ETL/ELT, Warehousing)</div>
+      <div class="competency-item">Stakeholder & Cross-Team Collaboration</div>
+    </div>
+  </div>
+</section>
 
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Education</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-degree">Bachelor of Engineering<br>in Computer Science</div>
+        <div class="edu-school">Visvesvaraya Technological University</div>
+        <div class="edu-period">2012 — 2016 · Bangalore, India</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-    
-  </body>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="section-header" style="justify-content:center; margin-bottom:32px;">
+      <span class="section-num">05</span>
+      <h2>Let's Talk</h2>
+    </div>
+    <p>Have an interesting problem to solve or a team to build? I'd love to connect and explore what we can create together.</p>
+    <div class="contact-buttons">
+      <a href="mailto:navinkumar2508@gmail.com" class="btn-primary">
+        <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.5"/></svg>
+        navinkumar2508@gmail.com
+      </a>
+      <a href="tel:+919738677711" class="btn-ghost">+91 97386 77711</a>
+    </div>
+    <div class="contact-icons">
+      <a href="https://linkedin.com/in/dynamicnavin" target="_blank" class="icon-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M4 7v5M4 4.5v.5M7 12V9a2 2 0 014 0v3M7 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+      <a href="https://github.com/Navin-Baliyase" target="_blank" class="icon-link" aria-label="GitHub">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 1C4.134 1 1 4.134 1 8c0 3.09 2.003 5.715 4.784 6.641.35.064.48-.152.48-.336v-1.18c-1.946.423-2.357-.94-2.357-.94-.318-.808-.777-1.023-.777-1.023-.635-.434.048-.425.048-.425.703.049 1.073.72 1.073.72.624 1.07 1.638.761 2.037.582.063-.452.244-.762.444-.937-1.554-.177-3.188-.777-3.188-3.457 0-.764.273-1.388.72-1.878-.072-.177-.312-.888.068-1.851 0 0 .587-.188 1.923.717A6.7 6.7 0 018 4.863a6.7 6.7 0 011.752.236c1.335-.905 1.921-.717 1.921-.717.381.963.141 1.674.069 1.851.448.49.72 1.114.72 1.878 0 2.687-1.638 3.278-3.197 3.45.251.217.475.645.475 1.3v1.926c0 .186.128.403.482.334C12.998 13.713 15 11.09 15 8c0-3.866-3.134-7-7-7z" fill="currentColor"/></svg>
+      </a>
+      <a href="mailto:navinkumar2508@gmail.com" class="icon-link" aria-label="Email">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Navin Kumar</span>
+  <span style="color:var(--border)">Built with ♥ · Deployable on GitHub Pages</span>
+</footer>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.timeline-item, .skill-card, .competency-item').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Smooth active nav link highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent)' : '';
+    });
+  });
+</script>
+</body>
 </html>
