@@ -3,7 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navin Kumar — Engineering Leader</title>
+  <title>Navin Kumar — Lead Software Engineer &amp; Engineering Leader</title>
+
+  <!-- SEO: core -->
+  <meta name="description" content="Navin Kumar is a freelance Ruby on Rails developer and Engineering Leader available for hire. 9+ years building scalable SaaS platforms on AWS and Azure. Open to remote freelance, contract, and consulting engagements worldwide." />
+  <meta name="keywords" content="Navin Kumar, freelance Ruby on Rails developer, hire Ruby on Rails developer, Rails developer for hire, Ruby on Rails contractor, remote Ruby developer, Rails consultant, Lead Software Engineer, Engineering Leader, Microservices, AWS, Azure, SaaS, backend engineer India" />
+  <meta name="author" content="Navin Kumar" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://rubyonrails.tech/" />
+  <meta name="theme-color" content="#080810" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://rubyonrails.tech/" />
+  <meta property="og:title" content="Navin Kumar — Lead Software Engineer &amp; Engineering Leader" />
+  <meta property="og:description" content="Freelance Ruby on Rails developer available for hire. 9+ years building scalable SaaS platforms, microservices, and cloud-native systems. Open to remote contract and consulting work worldwide." />
+  <meta property="og:image" content="https://rubyonrails.tech/images/bg_1.jpg" />
+  <meta property="og:image:alt" content="Navin Kumar portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Navin Kumar" />
+  <meta property="profile:first_name" content="Navin" />
+  <meta property="profile:last_name" content="Kumar" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Navin Kumar — Freelance Ruby on Rails Developer for Hire" />
+  <meta name="twitter:description" content="Freelance Ruby on Rails developer available for hire. 9+ years building scalable SaaS platforms, microservices, and cloud-native systems. Open to remote contract work." />
+  <meta name="twitter:image" content="https://rubyonrails.tech/images/bg_1.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!--
@@ -349,6 +376,26 @@
     .comp.vis { opacity:1; transform:translateY(0); }
     .comp::before { content:''; width:6px; height:6px; background:var(--accent); border-radius:50%; flex-shrink:0; }
 
+    /* ── HIRE ── */
+    .hire-intro {
+      font-family: var(--f-body);
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 760px;
+      margin-bottom: clamp(32px, 5vw, 48px);
+    }
+    .hire-footer {
+      margin-top: clamp(32px,5vw,48px);
+      padding-top: clamp(24px,4vw,36px);
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .hire-footer p {
+      font-family: var(--f-mono); font-size: 12px; color: var(--muted);
+    }
+
     /* ── EDUCATION ── */
     .edu-card {
       display:flex; gap:28px; align-items:flex-start;
@@ -428,6 +475,125 @@
       .badge   { font-size:9px; }
     }
   </style>
+
+  <!-- Structured Data: Person + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://rubyonrails.tech/#person",
+        "name": "Navin Kumar",
+        "jobTitle": "Lead Software Engineer",
+        "description": "Engineering Leader with 9+ years of experience architecting scalable SaaS platforms, leading distributed engineering teams, and building cloud-native systems using Ruby on Rails, microservices, AWS, and Azure.",
+        "url": "https://rubyonrails.tech/",
+        "email": "navinkumar2508@gmail.com",
+        "telephone": "+91-9738677711",
+        "image": "https://rubyonrails.tech/images/bg_1.jpg",
+        "sameAs": [
+          "https://linkedin.com/in/dynamicnavin",
+          "https://github.com/Navin-Baliyase"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Deoghar",
+          "addressRegion": "Jharkhand",
+          "addressCountry": "IN"
+        },
+        "knowsAbout": [
+          "Ruby on Rails",
+          "Microservices Architecture",
+          "AWS",
+          "Azure",
+          "PostgreSQL",
+          "Redis",
+          "System Design",
+          "Engineering Leadership",
+          "CI/CD",
+          "DevOps",
+          "SaaS Platforms"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Visvesvaraya Technological University",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bangalore",
+            "addressCountry": "IN"
+          }
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "CloudBolt Software"
+        },
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Lead Software Engineer",
+            "occupationLocation": { "@type": "Country", "name": "India" },
+            "skills": "Ruby on Rails, Microservices, AWS, Azure, Engineering Leadership"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Freelance & Consulting Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Freelance Ruby on Rails Development",
+                "description": "Full-stack and backend Ruby on Rails development — REST APIs, microservices, performance tuning, and feature delivery for startups and enterprises."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Microservices Architecture & Migration",
+                "description": "Monolith-to-microservices migration, service decomposition, and cloud-native architecture design on AWS and Azure."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Engineering Leadership & Team Augmentation",
+                "description": "Fractional Tech Lead or Engineering Manager for teams needing senior hands-on leadership, mentorship, and roadmap alignment."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SaaS Platform Development",
+                "description": "End-to-end SaaS product development including multi-tenancy, subscription billing, RBAC, and third-party API integrations."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Performance Optimization & Scaling",
+                "description": "Profiling and optimizing slow Rails applications — DB query tuning, Redis caching, background job optimization, and load testing."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://rubyonrails.tech/#website",
+        "url": "https://rubyonrails.tech/",
+        "name": "Navin Kumar — Lead Software Engineer",
+        "description": "Personal portfolio and professional profile of Navin Kumar, Engineering Leader specializing in scalable SaaS, microservices, and cloud-native systems.",
+        "author": { "@id": "https://rubyonrails.tech/#person" },
+        "inLanguage": "en-US"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 <div class="blob blob-1"></div>
@@ -440,7 +606,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
+    <li><a href="#hire" style="color:var(--accent);">Hire Me</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="burger" id="burger" aria-label="Toggle menu">
@@ -452,29 +618,29 @@
   <a href="#about"      onclick="close()">About</a>
   <a href="#experience" onclick="close()">Experience</a>
   <a href="#skills"     onclick="close()">Skills</a>
-  <a href="#education"  onclick="close()">Education</a>
+  <a href="#hire"       onclick="close()" style="color:var(--accent);">Hire Me</a>
   <a href="#contact"    onclick="close()">Contact</a>
 </div>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="badge">Available for senior opportunities</div>
+    <div class="badge">Freelance Ruby on Rails Developer · Available for Hire</div>
     <h1>
       Navin<br>
       <span class="ghost">Kumar<span class="dot">.</span></span>
     </h1>
     <p class="hero-desc">
-      Application Engineering Leader crafting scalable SaaS platforms, leading distributed teams, and turning complex systems into elegant solutions.
+      Freelance Ruby on Rails developer and Engineering Leader with 9+ years building scalable SaaS platforms and leading distributed teams. Available for remote freelance, contract, and consulting engagements worldwide.
     </p>
     <div class="ctas">
-      <a href="#experience" class="btn btn-p">
+      <a href="#hire" class="btn btn-p">
         <svg viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        View My Work
+        Hire Me
       </a>
-      <a href="mailto:navinkumar2508@gmail.com" class="btn btn-g">
+      <a href="#experience" class="btn btn-g">
         <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.5"/></svg>
-        Get In Touch
+        View My Work
       </a>
     </div>
     <div class="stats">
@@ -494,11 +660,17 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm an <strong>Engineering Leader</strong> with 9+ years of experience architecting scalable SaaS platforms and leading high-performing engineering teams.</p>
+        <p>I'm a <strong>freelance Ruby on Rails developer</strong> and Engineering Leader with 9+ years of experience architecting scalable SaaS platforms and leading high-performing engineering teams.</p>
         <p>My expertise spans <strong>microservices architecture</strong>, cloud-native systems on AWS and Azure, DevOps automation, and distributed backend design — primarily in Ruby on Rails.</p>
         <p>I've driven <strong>monolith-to-microservices transformations</strong>, maintained 99.9%+ system uptime, and consistently improved engineering delivery velocity — all while championing technical strategy, mentorship, and cross-functional alignment.</p>
+        <p>I'm available for <strong>remote freelance Ruby on Rails development</strong>, contract engagements, and consulting — from greenfield SaaS builds to team augmentation and architecture reviews.</p>
       </div>
       <div class="sidebar">
+        <div class="card">
+          <div class="card-lbl">Availability</div>
+          <div class="card-val" style="color:var(--accent);">Open to freelance &amp; contract work</div>
+          <div class="card-val" style="margin-top:6px;font-size:12px;">Remote · Worldwide · Project or retainer</div>
+        </div>
         <div class="card">
           <div class="card-lbl">Location</div>
           <div class="card-val">Deoghar, Jharkhand, India</div>
@@ -656,11 +828,80 @@
   </div>
 </section>
 
+<!-- HIRE ME / SERVICES -->
+<section id="hire">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">04</span><h2>Available for Hire</h2><div class="sec-line"></div>
+    </div>
+    <p class="hire-intro">I'm a <strong style="color:var(--text);">freelance Ruby on Rails developer</strong> and engineering consultant available for remote contract work worldwide. Whether you need a senior Rails engineer, a tech lead to scale your team, or an architect to modernise a legacy platform — let's build something great.</p>
+    <div class="skills-grid">
+      <div class="sk-card">
+        <div class="sk-icon">🛤️</div>
+        <div class="sk-title">Ruby on Rails Development</div>
+        <div class="tags">
+          <span class="tag">REST APIs</span><span class="tag">Sidekiq</span>
+          <span class="tag">RSpec</span><span class="tag">Rails 5/6/7</span>
+          <span class="tag">PostgreSQL</span><span class="tag">Redis</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">🔀</div>
+        <div class="sk-title">Microservices &amp; Architecture</div>
+        <div class="tags">
+          <span class="tag">Monolith Migration</span><span class="tag">Service Design</span>
+          <span class="tag">Event-Driven</span><span class="tag">API Gateway</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">☁️</div>
+        <div class="sk-title">Cloud &amp; DevOps</div>
+        <div class="tags">
+          <span class="tag">AWS</span><span class="tag">Azure</span>
+          <span class="tag">CloudFormation</span><span class="tag">CI/CD</span>
+          <span class="tag">Docker</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">👥</div>
+        <div class="sk-title">Team Augmentation &amp; Leadership</div>
+        <div class="tags">
+          <span class="tag">Fractional Tech Lead</span><span class="tag">Code Review</span>
+          <span class="tag">Mentorship</span><span class="tag">Roadmapping</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">⚡</div>
+        <div class="sk-title">Performance Optimisation</div>
+        <div class="tags">
+          <span class="tag">DB Query Tuning</span><span class="tag">Caching</span>
+          <span class="tag">Profiling</span><span class="tag">Load Testing</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-icon">🏗️</div>
+        <div class="sk-title">SaaS Platform Development</div>
+        <div class="tags">
+          <span class="tag">Multi-tenancy</span><span class="tag">Billing</span>
+          <span class="tag">RBAC</span><span class="tag">Integrations</span>
+        </div>
+      </div>
+    </div>
+    <div class="hire-footer">
+      <p>Remote-friendly · Hourly, retainer, or project-based · Available across US, EU &amp; APAC time zones</p>
+      <a href="mailto:navinkumar2508@gmail.com" class="btn btn-p">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.5"/></svg>
+        Get a Quote
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- EDUCATION -->
 <section id="education">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">04</span><h2>Education</h2><div class="sec-line"></div>
+      <span class="sec-num">05</span><h2>Education</h2><div class="sec-line"></div>
     </div>
     <div class="edu-card">
       <div class="edu-icon">🎓</div>
@@ -677,10 +918,10 @@
 <section id="contact">
   <div class="wrap">
     <div class="sec-head" style="justify-content:center;">
-      <span class="sec-num">05</span><h2>Let's Talk</h2>
+      <span class="sec-num">06</span><h2>Hire Me</h2>
     </div>
     <div class="contact-c">
-      <p>Have an interesting problem to solve or a team to build? I'd love to connect and explore what we can create together.</p>
+      <p>Looking to hire a <strong style="color:var(--text);">freelance Ruby on Rails developer</strong> or need an engineering consultant for your team? I'm available for remote contract work, project-based engagements, and long-term retainers. Let's build something together.</p>
       <div class="contact-btns">
         <a href="mailto:navinkumar2508@gmail.com" class="btn btn-p">
           <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M1 5l7 5 7-5" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -733,7 +974,7 @@
       }
     });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.tl-item, .sk-card, .comp').forEach(el => io.observe(el));
+  document.querySelectorAll('.tl-item, .sk-card, .comp, #hire .sk-card').forEach(el => io.observe(el));
 
   /* active nav */
   const secs  = [...document.querySelectorAll('section[id]')];
