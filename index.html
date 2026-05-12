@@ -5,20 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO: core -->
-  <meta name="description" content="Navin Kumar is a freelance Ruby on Rails developer and Engineering Leader available for hire. 9+ years building scalable SaaS platforms on AWS and Azure. Open to remote freelance, contract, and consulting engagements worldwide." />
-  <meta name="keywords" content="Navin Kumar, freelance Ruby on Rails developer, hire Ruby on Rails developer, Rails developer for hire, Ruby on Rails contractor, remote Ruby developer, Rails consultant, Lead Software Engineer, Engineering Leader, Microservices, AWS, Azure, SaaS, backend engineer India" />
+  <meta name="description" content="Experienced freelance Ruby on Rails developer for hire. 9+ years, Rails 7, REST APIs, AWS &amp; Azure. Remote worldwide. Open to contract, retainer &amp; consulting." />
+  <meta name="keywords" content="ruby on rails developer, rails developer, ror developer, hire ruby on rails developer, hire rails developer, hire ror developer, freelance ruby on rails developer, freelance rails developer, freelance ror developer, ruby on rails developer for hire, rails developer for hire, ror developer for hire, experienced ruby on rails developer, senior ruby on rails developer, expert ruby on rails developer, professional ruby on rails developer, remote ruby on rails developer, remote rails developer, remote ror developer, contract ruby on rails developer, ruby on rails contractor, rails contractor, ruby on rails consultant, rails consultant, ruby on rails engineer, rails engineer, ror engineer, ruby on rails api developer, rails api developer, ruby on rails backend developer, ruby on rails saas developer, rails 7 developer, ruby on rails microservices developer, ruby on rails full stack developer, ruby on rails tech lead, fractional rails tech lead, ruby on rails developer india, remote rails developer india, freelance ruby developer, best ruby on rails developer, top ruby on rails developer, ruby on rails team augmentation, Navin Kumar" />
   <meta name="author" content="Navin Kumar" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://rubyonrails.tech/" />
   <meta name="theme-color" content="#080810" />
 
-  <title>Navin Kumar | Freelance Ruby on Rails Developer for Hire</title>
+  <title>Freelance Ruby on Rails Developer for Hire | Navin Kumar</title>
 
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://rubyonrails.tech/" />
-  <meta property="og:title" content="Navin Kumar | Freelance Ruby on Rails Developer for Hire" />
-  <meta property="og:description" content="Freelance Ruby on Rails developer available for hire. 9+ years building scalable SaaS platforms, microservices, and cloud-native systems. Open to remote contract and consulting work worldwide." />
+  <meta property="og:title" content="Freelance Ruby on Rails Developer for Hire | Navin Kumar" />
+  <meta property="og:description" content="Experienced freelance Ruby on Rails developer for hire. 9+ years, Rails 7, REST APIs, AWS &amp; Azure. Remote worldwide. Open to contract, retainer &amp; consulting." />
   <meta property="og:image" content="https://rubyonrails.tech/images/bg_1.jpg" />
   <meta property="og:image:alt" content="Navin Kumar portfolio" />
   <meta property="og:locale" content="en_US" />
@@ -28,8 +28,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Navin Kumar — Freelance Ruby on Rails Developer for Hire" />
-  <meta name="twitter:description" content="Freelance Ruby on Rails developer available for hire. 9+ years building scalable SaaS platforms, microservices, and cloud-native systems. Open to remote contract work." />
+  <meta name="twitter:title" content="Freelance Ruby on Rails Developer for Hire | Navin Kumar" />
+  <meta name="twitter:description" content="Experienced freelance Ruby on Rails developer for hire. 9+ years, Rails 7, REST APIs, AWS &amp; Azure. Remote worldwide. Open to contract, retainer &amp; consulting." />
   <meta name="twitter:image" content="https://rubyonrails.tech/images/bg_1.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -199,6 +199,20 @@
       -webkit-text-stroke:1px rgba(255,255,255,.22);
     }
     h1 .dot { color:var(--accent); }
+
+    .hero-name {
+      font-family: var(--f-display);
+      font-size: clamp(44px,10vw,100px);
+      font-weight:800; line-height:.93;
+      letter-spacing: clamp(-2px,-0.04em,-3px);
+      margin-bottom:24px;
+      animation: up .7s .1s ease both;
+    }
+    .hero-name .ghost {
+      display:block; color:transparent;
+      -webkit-text-stroke:1px rgba(255,255,255,.22);
+    }
+    .hero-name .dot { color:var(--accent); }
 
     .hero-desc {
       font-family: var(--f-body);
@@ -376,6 +390,29 @@
     }
     .comp.vis { opacity:1; transform:translateY(0); }
     .comp::before { content:''; width:6px; height:6px; background:var(--accent); border-radius:50%; flex-shrink:0; }
+
+    /* ── FAQ ── */
+    #faq { background: var(--bg); }
+    .faq-list { display:flex; flex-direction:column; gap:14px; max-width:860px; }
+    .faq-item {
+      background:var(--card); border:1px solid var(--border);
+      border-radius:14px; padding: clamp(20px,3vw,28px);
+      opacity:0; transform:translateY(12px);
+      transition: opacity .45s ease, transform .45s ease;
+    }
+    .faq-item.vis { opacity:1; transform:translateY(0); }
+    .faq-q {
+      font-family:var(--f-display);
+      font-size: clamp(15px,2vw,17px);
+      font-weight:700; color:var(--text); margin-bottom:10px;
+    }
+    .faq-q::before { content:'Q — '; color:var(--accent); }
+    .faq-a {
+      font-family:var(--f-body);
+      font-size: clamp(13px,1.6vw,15px);
+      color:var(--muted); line-height:1.8;
+    }
+    .faq-a a { color:var(--accent); text-decoration:none; }
 
     /* ── HIRE ── */
     .hire-intro {
@@ -584,11 +621,47 @@
         }
       },
       {
+        "@type": "FAQPage",
+        "@id": "https://rubyonrails.tech/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are you available as a freelance Ruby on Rails developer?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes — I'm available for remote freelance Ruby on Rails development, contract work, and consulting engagements worldwide. I accept project-based, hourly, and monthly retainer arrangements." }
+          },
+          {
+            "@type": "Question",
+            "name": "What Ruby on Rails services do you offer?",
+            "acceptedAnswer": { "@type": "Answer", "text": "I offer full-stack and backend Ruby on Rails development including REST API design, microservices architecture, SaaS platform development, performance optimisation, AWS and Azure cloud infrastructure, CI/CD pipeline setup, and fractional tech lead services." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which Rails versions and technologies do you work with?",
+            "acceptedAnswer": { "@type": "Answer", "text": "I work with Rails 5, 6, and 7 including Hotwire/Turbo. My stack includes Ruby on Rails, PostgreSQL, MySQL, Redis, Sidekiq, RSpec, Devise, AWS, Azure, Docker, and GitHub Actions." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you work with startups or only large enterprises?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Both. I work with early-stage startups building their first Rails product, scale-ups migrating off a monolith, and enterprises needing a senior contract Rails engineer or fractional tech lead." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are you available for remote work across different time zones?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, I'm fully remote and available across US (EST/PST), EU (CET/GMT), and APAC time zones." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I hire you as a Ruby on Rails developer?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Email navinkumar2508@gmail.com or call +91 97386 77711 with a brief description of your project. I'll respond within 24 hours with questions, availability, and next steps." }
+          }
+        ]
+      },
+      {
         "@type": "WebSite",
         "@id": "https://rubyonrails.tech/#website",
         "url": "https://rubyonrails.tech/",
-        "name": "Navin Kumar — Lead Software Engineer",
-        "description": "Personal portfolio and professional profile of Navin Kumar, Engineering Leader specializing in scalable SaaS, microservices, and cloud-native systems.",
+        "name": "Freelance Ruby on Rails Developer for Hire | Navin Kumar",
+        "description": "Freelance Ruby on Rails developer available for hire. 9+ years building scalable SaaS platforms, microservices, and cloud-native systems on AWS and Azure. Remote worldwide.",
         "author": { "@id": "https://rubyonrails.tech/#person" },
         "inLanguage": "en-US"
       }
@@ -608,6 +681,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#hire" style="color:var(--accent);">Hire Me</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="burger" id="burger" aria-label="Toggle menu">
@@ -626,13 +700,13 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="badge">Freelance Ruby on Rails Developer · Available for Hire</div>
-    <h1>
+    <h1 class="badge">Freelance Ruby on Rails Developer · Available for Hire</h1>
+    <p class="hero-name">
       Navin<br>
       <span class="ghost">Kumar<span class="dot">.</span></span>
-    </h1>
+    </p>
     <p class="hero-desc">
-      Freelance Ruby on Rails developer and Engineering Leader with 9+ years building scalable SaaS platforms and leading distributed teams. Available for remote freelance, contract, and consulting engagements worldwide.
+      Senior Ruby on Rails (ROR) developer with 9+ years building scalable SaaS platforms, REST APIs, and microservices on AWS and Azure. Available for remote freelance contracts, retainers, and consulting — Rails 5, 6 &amp; 7, PostgreSQL, Redis, Sidekiq, RSpec.
     </p>
     <div class="ctas">
       <a href="#hire" class="btn btn-p">
@@ -661,10 +735,10 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm a <strong>freelance Ruby on Rails developer</strong> and Engineering Leader with 9+ years of experience architecting scalable SaaS platforms and leading high-performing engineering teams.</p>
-        <p>My expertise spans <strong>microservices architecture</strong>, cloud-native systems on AWS and Azure, DevOps automation, and distributed backend design — primarily in Ruby on Rails.</p>
-        <p>I've driven <strong>monolith-to-microservices transformations</strong>, maintained 99.9%+ system uptime, and consistently improved engineering delivery velocity — all while championing technical strategy, mentorship, and cross-functional alignment.</p>
-        <p>I'm available for <strong>remote freelance Ruby on Rails development</strong>, contract engagements, and consulting — from greenfield SaaS builds to team augmentation and architecture reviews.</p>
+        <p>I'm an <strong>experienced Ruby on Rails (ROR) developer</strong> with 9+ years of professional experience across Rails 5, 6, and 7 — building production SaaS platforms, REST APIs, and microservices for startups and enterprises alike.</p>
+        <p>My stack: <strong>Ruby on Rails, PostgreSQL, Redis, Sidekiq, RSpec, AWS (EC2, RDS, S3, Lambda, CloudFormation), Azure, Docker, and CI/CD pipelines</strong>. I write clean, tested, well-documented code that scales.</p>
+        <p>I've led <strong>monolith-to-microservices migrations</strong>, maintained 99.9%+ uptime on enterprise SaaS, cut response times by ~30%, and managed full delivery cycles from architecture through deployment.</p>
+        <p>Open to <strong>remote freelance contracts, retainers, and consulting</strong> — greenfield Rails builds, legacy Rails upgrades, API integrations, performance audits, and fractional tech lead roles.</p>
       </div>
       <div class="sidebar">
         <div class="card">
@@ -785,6 +859,7 @@
         <div class="sk-title">Backend &amp; Languages</div>
         <div class="tags">
           <span class="tag">Ruby</span><span class="tag">Ruby on Rails</span>
+          <span class="tag">ROR</span><span class="tag">Rails 7</span>
           <span class="tag">REST APIs</span><span class="tag">Microservices</span>
         </div>
       </div>
@@ -898,11 +973,53 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">05</span><h2>FAQ</h2><div class="sec-line"></div>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">Are you available as a freelance Ruby on Rails developer?</div>
+        <div class="faq-a">Yes — I'm available for remote freelance Ruby on Rails development, contract work, and consulting engagements worldwide. I accept project-based, hourly, and monthly retainer arrangements. Reach me at <a href="mailto:navinkumar2508@gmail.com">navinkumar2508@gmail.com</a> to discuss scope and availability.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What Ruby on Rails services do you offer?</div>
+        <div class="faq-a">I offer full-stack and backend Ruby on Rails development including: REST API design and development, microservices architecture and monolith migration, SaaS platform development (multi-tenancy, billing, RBAC), performance optimisation (DB tuning, Redis caching, Sidekiq), AWS and Azure cloud infrastructure, CI/CD pipeline setup, and fractional tech lead or engineering manager services.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Which Rails versions and technologies do you work with?</div>
+        <div class="faq-a">I work with Rails 5, 6, and 7 (including Hotwire/Turbo). My typical stack: Ruby on Rails, PostgreSQL, MySQL, Redis, Sidekiq, RSpec, Devise, AWS (EC2, RDS, S3, Lambda, CloudFormation), Azure, Docker, GitHub Actions, and Elasticsearch. I can join projects mid-flight or take them greenfield.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Do you work with startups or only large enterprises?</div>
+        <div class="faq-a">Both. I work with early-stage startups building their first Rails product, scale-ups migrating off a monolith, and enterprises needing a senior contract Rails engineer or fractional tech lead. Scope, timeline, and budget are agreed upfront with no surprises.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Are you available for remote work across different time zones?</div>
+        <div class="faq-a">Yes, I'm fully remote and available across US (EST/PST), EU (CET/GMT), and APAC time zones. I have 3+ years of experience working asynchronously with distributed teams across multiple time zones as part of my role at CloudBolt Software.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I hire you as a Ruby on Rails developer?</div>
+        <div class="faq-a">Email <a href="mailto:navinkumar2508@gmail.com">navinkumar2508@gmail.com</a> or call <a href="tel:+919738677711">+91 97386 77711</a> with a brief description of your project or requirement. I'll respond within 24 hours with questions, availability, and next steps.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- EDUCATION -->
 <section id="education">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">05</span><h2>Education</h2><div class="sec-line"></div>
+      <span class="sec-num">06</span><h2>Education</h2><div class="sec-line"></div>
     </div>
     <div class="edu-card">
       <div class="edu-icon">🎓</div>
@@ -919,7 +1036,7 @@
 <section id="contact">
   <div class="wrap">
     <div class="sec-head" style="justify-content:center;">
-      <span class="sec-num">06</span><h2>Hire Me</h2>
+      <span class="sec-num">07</span><h2>Hire Me</h2>
     </div>
     <div class="contact-c">
       <p>Looking to hire a <strong style="color:var(--text);">freelance Ruby on Rails developer</strong> or need an engineering consultant for your team? I'm available for remote contract work, project-based engagements, and long-term retainers. Let's build something together.</p>
@@ -975,7 +1092,7 @@
       }
     });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.tl-item, .sk-card, .comp, #hire .sk-card').forEach(el => io.observe(el));
+  document.querySelectorAll('.tl-item, .sk-card, .comp, #hire .sk-card, .faq-item').forEach(el => io.observe(el));
 
   /* active nav */
   const secs  = [...document.querySelectorAll('section[id]')];

@@ -1,108 +1,163 @@
-# Navin Kumar — Freelance Ruby on Rails Developer & Engineering Leader
+# Freelance Ruby on Rails Developer (ROR Developer) for Hire | Navin Kumar
 
-> Navin Kumar is an **available-for-hire freelance Ruby on Rails developer and engineering consultant** with 9+ years of experience. He is open to freelance projects, contract engagements, remote consulting, and team augmentation for startups and enterprises worldwide.
+> **Experienced freelance Ruby on Rails developer (ROR developer) available for hire** — 9+ years building scalable SaaS platforms, REST APIs, microservices, and cloud-native systems on AWS and Azure. Remote worldwide. Rails 5, 6 & 7. Open to contract, retainer, and consulting engagements.
 
 **Website:** https://rubyonrails.tech
 **Email:** navinkumar2508@gmail.com
 **Phone / WhatsApp:** +91 97386 77711
 **LinkedIn:** https://linkedin.com/in/dynamicnavin
 **GitHub:** https://github.com/Navin-Baliyase
-**Location:** India (available remotely worldwide)
-**Availability:** Open to freelance, contract, and consulting work
+**Location:** India (remote worldwide)
+**Availability:** Open — freelance, contract, retainer, consulting
 
 ---
 
-## Hire Navin Kumar — Ruby on Rails Developer
+## Hire a Freelance Ruby on Rails Developer
 
-If you are looking for a **freelance Ruby on Rails developer**, a **Ruby on Rails contractor**, a **backend Ruby engineer for hire**, or an **engineering consultant** to lead or augment your team, Navin Kumar is available.
+Looking for a **freelance Ruby on Rails developer**, a **Ruby on Rails contractor**, a **senior Rails engineer for hire**, or a **remote Ruby developer**? Navin Kumar is available for remote contract work worldwide.
 
 He works with:
-- Startups building their first SaaS product on Rails
-- Scale-ups migrating monoliths to microservices
-- Enterprises needing a senior Rails contractor or tech lead
-- Teams that need temporary or ongoing engineering leadership
+- **Startups** building their first Rails SaaS product
+- **Scale-ups** migrating a monolith to microservices
+- **Enterprises** needing a senior Rails contractor or fractional tech lead
+- **Product teams** needing ongoing retainer-based Ruby development
 
 **Contact to hire:** navinkumar2508@gmail.com | +91 97386 77711
 
 ---
 
-## Services Offered
+## Ruby on Rails Expertise
 
-### Ruby on Rails Development
-Full-stack and backend Rails development — REST APIs, background jobs, database design, performance tuning, and feature delivery. Experienced with Rails 5, 6, 7.
+**Rails versions:** Rails 5, Rails 6, Rails 7 (including Hotwire, Turbo, Stimulus)
 
-### Microservices Architecture & Migration
-Design and execution of monolith-to-microservices migrations. Service decomposition, inter-service communication, data consistency strategies.
+**Backend gems & tools:**
+- Sidekiq (background job processing)
+- Devise (authentication)
+- Pundit / CanCanCan (authorisation / RBAC)
+- RSpec / FactoryBot (testing)
+- ActiveRecord, ActiveJob, ActionCable
+- Grape (API framework)
+- Capistrano (deployment)
 
-### Cloud Infrastructure (AWS / Azure)
-Cloud architecture, infrastructure-as-code with AWS CloudFormation, CI/CD pipeline setup, container orchestration, and deployment automation.
+**APIs & integrations:**
+- RESTful API design and development
+- GraphQL APIs
+- Stripe / payment gateway integration
+- OAuth2 / JWT / SSO integration
+- Third-party API integrations (Salesforce, HubSpot, Slack, etc.)
 
-### Engineering Leadership & Team Augmentation
-Fractional Engineering Manager or Tech Lead for teams that need hands-on leadership. Sprint planning, code reviews, mentorship, hiring, and roadmap alignment.
+**Databases:**
+- PostgreSQL (primary), MySQL
+- Redis (caching, queues, sessions)
+- MongoDB
+- Elasticsearch (full-text search)
+- Database query optimisation, indexing, N+1 elimination
 
-### SaaS Platform Development
-End-to-end SaaS product development including multi-tenancy, subscription billing integration, role-based access control, and third-party API integrations.
-
-### Performance Optimization & Scaling
-Profiling and optimizing slow Rails applications — database query tuning, caching (Redis), background job optimization, and load testing.
-
-### Data Engineering (ETL/ELT)
-Building data pipelines using AWS Glue, ETL/ELT workflows, and data warehousing integrations.
+**Cloud & DevOps:**
+- AWS: EC2, RDS, S3, Lambda, CloudFormation, Glue, SQS, ElastiCache
+- Azure: VMs, App Service, CosmosDB
+- Docker, Docker Compose
+- GitHub Actions, Jenkins, CircleCI
+- Terraform, infrastructure as code
 
 ---
 
-## Why Hire Navin Kumar
+## Services Offered
 
-- **9+ years** of professional Ruby on Rails experience
-- Led engineering teams serving **10,000+ enterprise users**
-- Delivered **~30% performance improvements** through caching and DB optimization
+### 1. Freelance Ruby on Rails Development
+Full-stack and backend Rails development — REST APIs, background jobs, database design, performance tuning, and feature delivery. Available as a dedicated freelance Rails developer or alongside your existing team.
+
+### 2. Ruby on Rails API Development
+Design and build scalable REST or GraphQL APIs in Rails — versioning, authentication, rate limiting, serialisation, and documentation.
+
+### 3. Microservices Architecture & Migration
+Monolith-to-microservices migration strategy and execution. Service decomposition, inter-service communication (REST, gRPC, events), and data consistency patterns.
+
+### 4. SaaS Platform Development
+End-to-end SaaS development in Rails: multi-tenancy (Apartment/ActsAsTenant), subscription billing (Stripe), role-based access control, onboarding flows, and third-party integrations.
+
+### 5. Rails Performance Optimisation
+Profiling slow Rails apps — N+1 query elimination, database indexing, Redis caching, Sidekiq tuning, and load testing. Typical result: 20–40% response time reduction.
+
+### 6. Legacy Rails Upgrade
+Upgrade legacy Rails apps from Rails 4/5 to Rails 6/7. Dependency upgrades, deprecation fixes, test suite repair, and deployment.
+
+### 7. Cloud Infrastructure (AWS / Azure)
+Cloud architecture, infrastructure-as-code with AWS CloudFormation, CI/CD pipeline setup, container orchestration, and deployment automation for Rails apps.
+
+### 8. Engineering Leadership & Team Augmentation
+Fractional Engineering Manager or Tech Lead. Sprint planning, architecture decisions, code reviews, mentorship, and cross-team alignment. Works well for teams of 3–15 engineers.
+
+### 9. Rails Code Review & Architecture Audit
+One-time deep audit of your Rails codebase — security vulnerabilities, performance bottlenecks, test coverage gaps, and architectural weaknesses. Delivered as a written report with prioritised recommendations.
+
+---
+
+## Why Hire This Freelance Ruby on Rails Developer
+
+- **9+ years** of professional Ruby on Rails experience (Rails 5, 6, 7)
+- Led engineering teams serving **10,000+ enterprise users** at CloudBolt Software
+- Delivered **~30% performance improvements** through caching and DB query optimisation
 - Maintained **99.9%+ uptime** on production SaaS systems
-- Proven track record at CloudBolt Software (enterprise cloud management SaaS)
+- Proven track record at a funded enterprise SaaS company
 - Available for **remote work** across US, EU, and APAC time zones
-- Communicates clearly with both technical and non-technical stakeholders
+- Strong communication — works well with technical and non-technical stakeholders
+- Clean, tested, documented code (RSpec, CI/CD, Git flow)
 
 ---
 
 ## About
 
-Navin Kumar is an Engineering Leader and freelance Ruby on Rails developer based in Deoghar, Jharkhand, India. He has 9+ years of experience architecting scalable SaaS platforms, leading distributed engineering teams, and building cloud-native systems on AWS and Azure.
+Freelance Ruby on Rails developer and Engineering Leader Navin Kumar is based in Deoghar, Jharkhand, India. He has 9+ years of experience building scalable SaaS platforms, REST APIs, microservices, and cloud-native systems using Ruby on Rails, AWS, and Azure.
 
-He is currently a Lead Software Engineer at CloudBolt Software and is **open to freelance and contract engagements** on the side or exclusively depending on scope.
+He is currently a Lead Software Engineer at CloudBolt Software (enterprise cloud management SaaS) and is **open to freelance and contract engagements** alongside or exclusively depending on scope.
 
 ---
 
 ## Professional Experience
 
 ### Lead Software Engineer — CloudBolt Software (June 2022 – Present)
-- Led a team of 5+ engineers delivering enterprise SaaS solutions serving 10,000+ users
-- Spearheaded monolith-to-microservices migration improving scalability and reducing technical debt
-- Improved deployment frequency from bi-weekly to weekly releases via CI/CD optimization
-- Enhanced system performance through caching and DB tuning, reducing response time by ~30%
-- Maintained 99.9%+ system uptime through resilient architecture design and monitoring
+CloudBolt is an enterprise cloud management SaaS platform (Ruby on Rails backend).
+- Led a team of 5+ engineers delivering features to 10,000+ enterprise users
+- Spearheaded monolith-to-microservices migration
+- Improved CI/CD deployment cadence from bi-weekly to weekly
+- Reduced API response time by ~30% via Redis caching and DB tuning
+- Maintained 99.9%+ system uptime
 
 ### Senior Software Engineer — CloudBolt Software (October 2020 – June 2022)
-- Designed scalable REST APIs and backend services handling high-volume enterprise workloads
-- Automated infrastructure provisioning using AWS CloudFormation
-- Mentored junior engineers reducing onboarding time by ~30%
+- Designed scalable REST APIs and backend services in Rails
+- Automated infrastructure provisioning with AWS CloudFormation
+- Mentored junior Rails developers
 
 ### Senior Software Development Engineer — MyUpchar.com (September 2019 – October 2020)
-- Architected backend systems supporting e-commerce operations and warehouse automation
-- Improved operational efficiency by ~40% through backend workflow automation
+- Built Rails backend for e-commerce and warehouse automation
+- 40% efficiency improvement via backend workflow automation
 
 ### Software Engineer — Kreatio Software Pvt Ltd (August 2016 – March 2019)
-- Developed scalable Ruby on Rails applications and RESTful services
-- Supported AWS/Azure deployments and performance optimization initiatives
+- Built Ruby on Rails applications and RESTful services
+- AWS/Azure deployments and performance optimisation
 
 ---
 
-## Skills
+## Frequently Asked Questions
 
-- **Backend:** Ruby, Ruby on Rails, REST APIs, Microservices, Sidekiq, RSpec
-- **Cloud:** AWS (EC2, RDS, S3, Lambda, CloudFormation, Glue), Azure
-- **Databases:** PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch
-- **Data:** ETL/ELT, AWS Glue, Data Warehousing
-- **DevOps:** CI/CD, Docker, GitHub Actions, Jenkins
-- **Leadership:** Engineering Management, Agile/Scrum, System Design, Technical Roadmapping
+**Q: Are you available as a freelance Ruby on Rails developer?**
+A: Yes. Available for remote freelance Rails development, contract work, and consulting worldwide.
+
+**Q: What Rails versions do you work with?**
+A: Rails 5, 6, and 7 — including Hotwire, Turbo, and Stimulus for modern Rails frontends.
+
+**Q: Do you work with startups?**
+A: Yes — from greenfield Rails SaaS builds to post-seed scale-up engineering.
+
+**Q: What is your engagement model?**
+A: Project-based (fixed scope), hourly contract, or monthly retainer. Email navinkumar2508@gmail.com for rates and availability.
+
+**Q: Are you available across US/EU time zones?**
+A: Yes — fully remote, available across EST, PST, CET, GMT, and APAC time zones.
+
+**Q: How do I hire you?**
+A: Email navinkumar2508@gmail.com with your project description. Response within 24 hours.
 
 ---
 
@@ -115,15 +170,67 @@ Visvesvaraya Technological University — Bangalore, India (2012–2016)
 
 ## Engagement Models
 
-| Model | Description |
+| Model | Best For |
 |---|---|
-| Project-based | Fixed scope, fixed price — ideal for new features, migrations, audits |
-| Hourly / Retainer | Ongoing contract — ideal for product teams needing a senior Rails engineer |
-| Team Augmentation | Embedded as a senior engineer or tech lead within your existing team |
-| Consulting / Audit | Architecture review, performance audit, code review, or technical due diligence |
+| Project-based | Fixed scope: feature build, migration, audit |
+| Hourly contract | Flexible ongoing work, bug fixes, consultations |
+| Monthly retainer | Dedicated part-time or full-time Rails developer |
+| Team augmentation | Embedded senior engineer within your team |
+| Fractional Tech Lead | Part-time engineering leadership and architecture |
 
 ---
 
-## Keywords (for search relevance)
+## Tech Stack Summary
 
-freelance Ruby on Rails developer, hire Ruby on Rails developer, Ruby on Rails contractor, Rails developer for hire, remote Ruby developer, Ruby on Rails consultant, backend Ruby engineer, Rails API developer, SaaS Rails developer, microservices Ruby developer, engineering leader for hire, fractional CTO, fractional engineering manager, Ruby on Rails India, remote Rails developer India, hire Rails team, Rails developer available
+```
+Language:    Ruby 3.x
+Framework:   Ruby on Rails 5 / 6 / 7
+Frontend:    Hotwire, Turbo, Stimulus, ERB, basic React
+Databases:   PostgreSQL, MySQL, Redis, MongoDB, Elasticsearch
+Background:  Sidekiq, DelayedJob, ActiveJob
+Cloud:       AWS (EC2, RDS, S3, Lambda, SQS, CloudFormation), Azure
+DevOps:      Docker, GitHub Actions, CircleCI, Capistrano
+Testing:     RSpec, FactoryBot, Capybara
+Auth:        Devise, JWT, OAuth2, SSO
+API:         REST, GraphQL, Grape
+```
+
+---
+
+## Search Keywords
+
+### Core — Ruby on Rails Developer
+ruby on rails developer, rails developer, ror developer, ruby developer, ruby on rails engineer, rails engineer, ror engineer, ruby on rails programmer, rails programmer
+
+### Hire Intent
+hire ruby on rails developer, hire rails developer, hire ror developer, hire ruby developer, ruby on rails developer for hire, rails developer for hire, ror developer for hire, ruby developer for hire, ruby on rails developer available, looking for ruby on rails developer, need ruby on rails developer, find ruby on rails developer, ruby on rails developer wanted
+
+### Freelance
+freelance ruby on rails developer, freelance rails developer, freelance ror developer, freelance ruby developer, freelance ruby on rails engineer, freelance rails engineer, freelance ror engineer, independent ruby on rails developer, independent rails developer, ruby on rails freelancer, rails freelancer, ror freelancer
+
+### Experience Level
+experienced ruby on rails developer, senior ruby on rails developer, expert ruby on rails developer, professional ruby on rails developer, skilled ruby on rails developer, senior rails developer, expert rails developer, senior ror developer, expert ror developer, seasoned rails developer, veteran rails developer, mid-senior rails developer, principal rails engineer, staff rails engineer
+
+### Contract & Consulting
+ruby on rails contractor, rails contractor, ror contractor, ruby on rails consultant, rails consultant, ror consultant, ruby on rails consulting, rails consulting, contract ruby on rails developer, contract rails developer, contract ror developer, ruby on rails consulting services, rails consulting services
+
+### Remote
+remote ruby on rails developer, remote rails developer, remote ror developer, remote ruby developer, remote ruby on rails engineer, remote rails engineer, work remotely rails developer, distributed team rails developer
+
+### Location
+ruby on rails developer india, rails developer india, ror developer india, ruby developer india, remote ruby on rails developer india, freelance rails developer india, hire rails developer india, offshore rails developer india, offshore ruby on rails developer
+
+### Specialisation
+ruby on rails api developer, rails api developer, ruby on rails backend developer, rails backend developer, ruby on rails saas developer, rails saas developer, ruby on rails microservices developer, rails microservices developer, ruby on rails full stack developer, rails full stack developer, ruby on rails web developer, rails web developer, ruby on rails ecommerce developer, rails ecommerce developer, ruby on rails fintech developer
+
+### Rails Version Specific
+rails 7 developer, rails 6 developer, rails 5 developer, ruby on rails 7 developer, hotwire developer, turbo rails developer, stimulus developer, rails 7 hotwire developer
+
+### Leadership & Augmentation
+ruby on rails tech lead, rails tech lead, ror tech lead, ruby on rails team lead, rails team lead, ruby on rails engineering manager, fractional ruby on rails tech lead, fractional rails tech lead, fractional cto rails, ruby on rails architect, rails architect, ruby on rails team augmentation, rails team augmentation, ruby on rails developer augmentation, part-time rails tech lead, embedded rails engineer
+
+### Quality Signals
+best ruby on rails developer, top ruby on rails developer, best rails developer, top rails developer, trusted rails developer, reliable ruby on rails developer, certified ruby on rails developer, recommended ruby on rails developer
+
+### Navin Kumar
+Navin Kumar ruby on rails, Navin Kumar rails developer, Navin Kumar ROR developer, Navin Kumar freelance developer, Navin Kumar CloudBolt
