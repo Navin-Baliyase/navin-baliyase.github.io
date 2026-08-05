@@ -33,13 +33,12 @@ A single-page portfolio built with vanilla HTML, CSS, and JavaScript — no fram
 ├── robots.txt          # Crawl directives (includes AI bots)
 ├── sitemap.xml         # XML sitemap for search engines
 ├── llms.txt            # Plain-text profile for AI assistants
-├── CNAME               # Custom domain config for GitHub Pages
-├── images/             # Background assets
-├── css/                # Third-party CSS (Bootstrap, AOS, etc.) — legacy, unused
-└── js/                 # Third-party JS — legacy, unused
+├── site.webmanifest    # PWA manifest
+├── favicon.svg / .ico / favicon-16.png / favicon-32.png
+├── apple-touch-icon.png / icon-192.png / icon-512.png
+├── og-image.png         # Social share card (Open Graph / Twitter)
+└── CNAME                # Custom domain config for GitHub Pages
 ```
-
-> The `css/` and `js/` folders are legacy assets from an earlier template and are not referenced by `index.html`.
 
 ## Local Development
 
