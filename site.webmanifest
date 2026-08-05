@@ -1,0 +1,21 @@
+{
+  "name": "Navin Kumar — Freelance Ruby on Rails Developer",
+  "short_name": "Navin Kumar",
+  "description": "Freelance Ruby on Rails developer for hire. 9+ years building scalable SaaS, REST APIs, and microservices on AWS and Azure.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf8f3",
+  "theme_color": "#c8832a",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "technology", "business"],
+  "icons": [
+    { "src": "/favicon.svg",         "sizes": "any",     "type": "image/svg+xml" },
+    { "src": "/favicon-16.png",      "sizes": "16x16",   "type": "image/png" },
+    { "src": "/favicon-32.png",      "sizes": "32x32",   "type": "image/png" },
+    { "src": "/apple-touch-icon.png","sizes": "180x180", "type": "image/png" },
+    { "src": "/icon-192.png",        "sizes": "192x192", "type": "image/png", "purpose": "maskable any" },
+    { "src": "/icon-512.png",        "sizes": "512x512", "type": "image/png", "purpose": "maskable any" }
+  ]
+}
