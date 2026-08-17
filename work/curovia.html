@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curovia — Navin Kumar</title>
+<meta name="description" content="Multi-tenant clinic management SaaS built with Ruby on Rails — appointments, billing, AI chat, and WhatsApp booking. Live in production.">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../index.html">Navin Kumar</a>
+    <a class="back" href="../index.html#projects">← All Projects</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="status live">● Live in production</span>
+    <h1>Curovia</h1>
+    <p class="dek">A multi-tenant clinic management SaaS for Indian healthcare — branded per-organisation portals, role-based staff access, billing, an AI chat assistant with RAG, and a WhatsApp booking flow in English and Hindi.</p>
+    <div class="cta-row">
+      <a class="btn-solid" href="https://curovia.life" target="_blank" rel="noopener">Open curovia.life ↗</a>
+      <a class="btn-outline" href="#screens">Screenshots ↓</a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Overview</p>
+    <h2>Every patient journey, connected</h2>
+    <p class="lede">Curovia serves three distinct user types across separate namespaced portals — patients booking appointments, staff (doctors, receptionists, org admins) running the clinic day-to-day, and a super-admin platform layer managing every organisation. Each organisation gets its own branded login page, plan-gated feature set, and isolated data.</p>
+    <p class="lede">The screenshots below are from a real local instance seeded with realistic clinic data. The public marketing pages are captured directly from the live production site.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Architecture</p>
+    <h2>Multi-tenancy model</h2>
+    <p class="lede">An Organisation has many Branches. Staff belong to an org + branch via a StaffMembership that carries its own role — so a doctor who owns their clinic can be <code class="k">User.role = doctor</code> globally but <code class="k">org_admin</code> at their own membership.</p>
+    <table class="stack">
+      <tr><td>Tenant</td><td>Organisation — slug-identified, plan: free / pro / enterprise</td></tr>
+      <tr><td>Location</td><td>Branch — active / inactive</td></tr>
+      <tr><td>Access</td><td>StaffMembership — doctor / receptionist / org_admin / branch_admin</td></tr>
+      <tr><td>Portals</td><td><code class="k">/patient/</code> · <code class="k">/org/:slug/</code> · <code class="k">/admin/</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="screens">
+  <div class="wrap">
+    <p class="sec-label">Live site</p>
+    <h2>The public side</h2>
+    <p class="lede">Captured directly from curovia.life — no login required.</p>
+    <div class="shot-grid">
+      <div>
+        <div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">curovia.life</span></div><img src="img/curovia/live-home.png" alt="Curovia Life marketing homepage" loading="lazy"></div>
+        <p class="shot-cap">Marketing homepage</p>
+      </div>
+      <div>
+        <div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">curovia.life/pricing</span></div><img src="img/curovia/live-pricing.png" alt="Curovia pricing page" loading="lazy"></div>
+        <p class="shot-cap">Plan comparison (Free / Pro / Enterprise)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">The app</p>
+    <h2>Inside the org portal</h2>
+    <p class="lede">Logged in as an org admin of a demo hospital chain on the Enterprise plan.</p>
+    <div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">/org/&lt;slug&gt;/dashboard</span></div><img src="img/curovia/dashboard.png" alt="Curovia org admin dashboard" loading="lazy"></div>
+    <p class="shot-cap">Org admin dashboard — onboarding checklist, today's schedule, staff/patient counts</p>
+    <div class="shot-grid">
+      <div>
+        <div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">/org/&lt;slug&gt;/calendar</span></div><img src="img/curovia/calendar.png" alt="Appointment calendar" loading="lazy"></div>
+        <p class="shot-cap">Appointment calendar</p>
+      </div>
+      <div>
+        <div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">/org/&lt;slug&gt;/billing</span></div><img src="img/curovia/billing.png" alt="Billing and plan page" loading="lazy"></div>
+        <p class="shot-cap">Billing &amp; plan — usage limits, upgrade path</p>
+      </div>
+    </div>
+    <div class="shot-grid">
+      <div>
+        <div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">/org/&lt;slug&gt;/analytics</span></div><img src="img/curovia/analytics.png" alt="Analytics dashboard" loading="lazy"></div>
+        <p class="shot-cap">Analytics — appointment volume, status breakdown, revenue by department</p>
+      </div>
+      <div>
+        <div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">AI Chat Assistant</span></div><img src="img/curovia/ai-chat.png" alt="AI chat assistant widget" loading="lazy"></div>
+        <p class="shot-cap">RAG-backed AI chat assistant with quick-action shortcuts</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Engineering highlights</p>
+    <h2>What was actually hard here</h2>
+    <div class="highlight">
+      <h4>The user-role vs. membership-role bug — swept in one pass</h4>
+      <p>A doctor who owns their own clinic has <code class="k">User.role = doctor</code> but <code class="k">org_admin</code> at the membership level. Any query filtering "who is a doctor" by membership role instead of user role silently excludes them — found in one place, then found copy-pasted into 14 more. Fixed at the model layer so every caller benefits automatically.</p>
+    </div>
+    <div class="highlight">
+      <h4>Deferred foreign keys hide cascade bugs from the test suite</h4>
+      <p>PostgreSQL FK constraints are deferrable, so a missing <code class="k">dependent:</code> option can pass the full test suite cleanly — the violation only fires at COMMIT, which a test's wrapping transaction never reaches. Found in production when an org with real bills couldn't be deleted.</p>
+    </div>
+    <div class="highlight">
+      <h4>Super admins can view any org, but had zero real search access</h4>
+      <p>Patient/doctor search was scoped to the searching staff member's own org memberships — always empty for a super admin, by design. Fixed with a special case for super admins, not a loosened permission model for everyone else.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Tech stack</p>
+    <table class="stack">
+      <tr><td>Framework</td><td>Ruby on Rails 8.1</td></tr>
+      <tr><td>Database</td><td>PostgreSQL (multi-database) + pgvector</td></tr>
+      <tr><td>Frontend</td><td>Hotwire (Turbo + Stimulus), Tailwind CSS v4</td></tr>
+      <tr><td>Auth</td><td>Devise + TOTP two-factor</td></tr>
+      <tr><td>AI / LLM</td><td>Groq Cloud + Ollama fallback, RAG via pgvector + Jina embeddings</td></tr>
+      <tr><td>Integrations</td><td>WhatsApp (Meta Cloud API), Razorpay, ABHA health ID</td></tr>
+      <tr><td>Deployment</td><td>Kamal 2 + Thruster, AWS EC2, Cloudflare</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer class="bottom">
+  <div class="wrap">
+    <span>Application source is maintained privately — this page is a public technical overview.</span>
+    <a href="../index.html#projects">← All Projects</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FII Accumulation Tracker — Navin Kumar</title>
+<meta name="description" content="A scheduled scrape-score-rank pipeline tracking institutional-investor accumulation in Indian equities, built with Ruby on Rails and Sidekiq.">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../index.html">Navin Kumar</a>
+    <a class="back" href="../index.html#projects">← All Projects</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="status case">◆ Technical case study</span>
+    <h1>FII Accumulation Tracker</h1>
+    <p class="dek">A Rails 7.2 app that tracks Foreign Institutional Investor accumulation patterns in Indian stocks, scores them against shareholding trends and fundamentals, and surfaces high-conviction candidates for research.</p>
+    <div class="cta-row"><a class="btn-outline" href="#screens">See screenshots ↓</a></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Why it's not deployed</p>
+    <h2>The data source is the reason</h2>
+    <p class="lede">The pipeline scrapes a real third-party site (Screener.in) on a schedule — fine for personal use, not something to run continuously behind a public URL. The screenshots below are the real app, seeded with 20 NSE stocks and five years of real historical shareholding and price data.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">How it works</p>
+    <h2>A composite score, computed daily</h2>
+    <table class="stack">
+      <tr><td>+20 / +30 / +50</td><td>FII holding increased 1 / 2 / 3+ consecutive quarters</td></tr>
+      <tr><td>+20</td><td>Revenue growth &gt; 15% YoY</td></tr>
+      <tr><td>+20</td><td>Net profit growth &gt; 15% YoY</td></tr>
+      <tr><td>+10</td><td>ROCE &gt; 20%</td></tr>
+      <tr><td>−20</td><td>Debt/equity &gt; 1.0</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="screens">
+  <div class="wrap">
+    <p class="sec-label">Screenshots</p>
+    <h2>Real data, real scores</h2>
+    <div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">localhost:3000/dashboard</span></div><img src="img/fii-tracker/dashboard.png" alt="FII Tracker dashboard" loading="lazy"></div>
+    <p class="shot-cap">Dashboard — top FII-accumulation stocks, ranked by the daily-computed composite score</p>
+    <div class="shot-grid">
+      <div><div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">localhost:3000/stocks</span></div><img src="img/fii-tracker/stocks.png" alt="Stock list" loading="lazy"></div><p class="shot-cap">Stock list — sortable by score, sector, market cap</p></div>
+      <div><div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">localhost:3000/screener</span></div><img src="img/fii-tracker/screener.png" alt="Screener" loading="lazy"></div><p class="shot-cap">Screener — filter by ROCE, debt/equity, growth</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Engineering highlights</p>
+    <h2>What was actually hard here</h2>
+    <div class="highlight">
+      <h4>A stale-date join that silently zeroed every score</h4>
+      <p>The dashboard's ranking query joined scores on <code class="k">score_date = Date.today</code> — correct in production, but seeded/backfilled data (dated whenever it was created) fails that join silently, and <code class="k">COALESCE</code> quietly falls back to 0. No error, just a dashboard that looks broken. The fix was running the actual scoring job against the real historical data, exactly what production does daily.</p>
+    </div>
+    <div class="highlight">
+      <h4>Scheduled jobs, isolated by queue</h4>
+      <p>Daily price sync, weekly shareholding/financials sync, and daily scoring each run on their own schedule — sequenced so scoring always runs after the data it depends on has synced.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Tech stack</p>
+    <table class="stack">
+      <tr><td>Framework</td><td>Ruby on Rails 7.2</td></tr>
+      <tr><td>Database</td><td>PostgreSQL</td></tr>
+      <tr><td>Background jobs</td><td>Sidekiq + Redis</td></tr>
+      <tr><td>Authorization</td><td>Pundit</td></tr>
+      <tr><td>Data sourcing</td><td>HTTParty + Nokogiri (Screener.in), NSE price feed</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer class="bottom">
+  <div class="wrap">
+    <span>Application source is maintained privately — this page is a public technical overview.</span>
+    <a href="../index.html#projects">← All Projects</a>
+  </div>
+</footer>
+
+</body>
+</html>

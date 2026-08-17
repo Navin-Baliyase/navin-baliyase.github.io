@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive Virtual Background — Navin Kumar</title>
+<meta name="description" content="A from-scratch system design and early POC for a cross-platform virtual camera app — real-time segmentation and compositing, built with Electron, React, and Three.js.">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../index.html">Navin Kumar</a>
+    <a class="back" href="../index.html#projects">← All Projects</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="status poc">◆ Early-stage POC + design doc</span>
+    <h1>Interactive Virtual Background</h1>
+    <p class="dek">A desktop app that replaces and animates a webcam background in real time, then exposes the composited feed to Meet/Zoom/Teams/Slack/Discord as a standard virtual camera device — outside the usual Rails/backend work.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">What's actually built</p>
+    <h2>Included deliberately unfinished</h2>
+    <p class="lede">What's working: webcam capture with a live preview and FPS readout, a MediaPipe segmentation worker, a Three.js compositor, and a Linux virtual-camera bridge. What's below is the actual system design that drove those decisions, written before most of the code, not after.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Architecture</p>
+    <h2>The real-time frame pipeline</h2>
+    <p class="lede">Capture and segmentation run in a Web Worker with OffscreenCanvas — never on the renderer's main thread — so the settings UI stays responsive under segmentation load.</p>
+    <div class="frame" style="background:#0e0f13"><img src="img/background/architecture.svg" alt="Frame pipeline architecture diagram" loading="lazy"></div>
+    <p class="shot-cap">Capture → Segmentation → Compositor → Native Bridge → Virtual Camera → Meet/Zoom/Teams</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">The hard part</p>
+    <h2>Virtual camera delivery, per OS</h2>
+    <p class="lede">The most platform-fragmented part of the whole system. Each OS gets its own genuinely native implementation behind one thin shared interface.</p>
+    <table class="stack">
+      <tr><td>Linux</td><td>v4l2loopback kernel module + an ffmpeg pipe — built first, validates the whole pipeline</td></tr>
+      <tr><td>Windows</td><td>Media Foundation Virtual Camera API — a native, code-signed C++ component</td></tr>
+      <tr><td>macOS</td><td>CMIOExtension — its own signed + notarized system-extension target</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Design decisions</p>
+    <h2>Tradeoffs, made explicit</h2>
+    <div class="highlight">
+      <h4>Electron over Tauri</h4>
+      <p>macOS's WKWebView has historically had rougher WebGL/OffscreenCanvas/WASM-SIMD parity than Chromium — an unacceptable risk for a 30 FPS ML+GPU pipeline.</p>
+    </div>
+    <div class="highlight">
+      <h4>MediaPipe over a custom ONNX model</h4>
+      <p>MediaPipe hits the FPS target on mid-range hardware today, with the segmentation backend abstracted behind an interface so a higher-quality model can slot in later without a rewrite.</p>
+    </div>
+    <div class="highlight">
+      <h4>An adaptive quality controller, not a scheduler</h4>
+      <p>A hysteresis state machine watches actual frame time and steps a quality ladder up or down — it only ever swaps cheap parameters, never re-initializes the segmentation model.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Tech stack</p>
+    <table class="stack">
+      <tr><td>Shell</td><td>Electron (main + preload + renderer)</td></tr>
+      <tr><td>UI</td><td>React + TypeScript, Vite (electron-vite)</td></tr>
+      <tr><td>Segmentation</td><td>MediaPipe (WASM/WebGL), Web Worker + OffscreenCanvas</td></tr>
+      <tr><td>Compositing</td><td>Three.js (WebGL2)</td></tr>
+      <tr><td>Virtual camera (Linux)</td><td>v4l2loopback via an ffmpeg pipe</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer class="bottom">
+  <div class="wrap">
+    <span>Application source is public — nothing here is abridged.</span>
+    <a href="../index.html#projects">← All Projects</a>
+  </div>
+</footer>
+
+</body>
+</html>

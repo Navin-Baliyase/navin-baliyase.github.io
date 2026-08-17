@@ -546,6 +546,33 @@
     .marquee-item::after { content: '✦'; color: var(--amber); font-size: 10px; }
     @keyframes marquee { to { transform: translateX(-50%); } }
 
+    /* ═══ Projects ═══ */
+    .proj-intro { font-family: var(--sans); font-size: clamp(14px,1.5vw,16px); color: var(--mid); line-height: 1.8; max-width: 68ch; margin-bottom: 44px; }
+    .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .proj-card {
+      display: block; text-decoration: none; color: var(--ink);
+      border: 1px solid var(--border); border-radius: 4px; overflow: hidden;
+      background: var(--paper); transition: border-color .2s, transform .2s;
+    }
+    .proj-card:hover { border-color: var(--amber); transform: translateY(-3px); }
+    .proj-card.will-animate { opacity: 0; transform: translateY(16px); }
+    .proj-card.will-animate.vis { opacity: 1; transform: translateY(0); }
+    .proj-thumb { aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid var(--border); background: var(--cream); }
+    .proj-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .proj-thumb-code { background: var(--ink); padding: 18px 20px; }
+    .proj-thumb-code pre { margin: 0; font-family: var(--mono); font-size: 10.5px; line-height: 1.6; color: var(--amber-l); white-space: pre; }
+    .proj-body { padding: 20px 22px 22px; }
+    .proj-status { font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
+    .proj-status.live { color: #4caf50; }
+    .proj-status.case { color: var(--amber); }
+    .proj-status.poc  { color: var(--mid); }
+    .proj-title { font-family: var(--serif); font-size: 19px; font-weight: 700; margin-bottom: 8px; letter-spacing: -.3px; }
+    .proj-desc { font-family: var(--sans); font-size: 13px; color: var(--mid); line-height: 1.6; margin-bottom: 14px; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; }
+    .proj-tags li { font-family: var(--mono); font-size: 9.5px; letter-spacing: .04em; border: 1px solid var(--border); color: var(--mid); padding: 3px 9px; border-radius: 2px; }
+    @media (max-width: 1024px) { .proj-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px)  { .proj-grid { grid-template-columns: 1fr; } }
+
     /* hire footer bar */
     .hire-footer {
       margin-top: clamp(32px,5vw,48px); padding-top: clamp(24px,4vw,36px);
@@ -662,6 +689,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#hire">Services</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="https://rubyonrails.info/" target="_blank" rel="noopener me" class="nav-ext">Portfolio ↗</a></li>
@@ -678,6 +706,7 @@
     <a href="#about"      onclick="closeDrawer()">About</a>
     <a href="#experience" onclick="closeDrawer()">Experience</a>
     <a href="#skills"     onclick="closeDrawer()">Skills</a>
+    <a href="#projects"   onclick="closeDrawer()">Projects</a>
     <a href="#hire"       onclick="closeDrawer()">Services</a>
     <a href="#faq"        onclick="closeDrawer()">FAQ</a>
     <a href="#contact"    onclick="closeDrawer()">Hire Me</a>
@@ -1033,15 +1062,103 @@
       </div>
     </section>
 
+    <!-- ═══ PROJECTS ═══ -->
+    <section id="projects" aria-labelledby="projects-h2">
+      <div class="sec-wrap">
+        <div class="sec-header">
+          <div>
+            <p class="sec-label">05 — Side Projects</p>
+            <h2 id="projects-h2">Recent <em>Builds</em></h2>
+          </div>
+          <span class="sec-count" aria-hidden="true">05</span>
+        </div>
+
+        <p class="proj-intro">Six projects I've built outside client work — a live multi-tenant SaaS, a RAG-powered database assistant, an embeddings-based job matcher, and more. Source for most lives in private repos; each card below links to a full write-up with real screenshots and engineering notes.</p>
+
+        <div class="proj-grid">
+
+          <a class="proj-card will-animate" href="work/curovia.html">
+            <div class="proj-thumb"><img src="work/img/curovia/dashboard.png" alt="Curovia dashboard" loading="lazy"></div>
+            <div class="proj-body">
+              <span class="proj-status live">● Live</span>
+              <h3 class="proj-title">Curovia</h3>
+              <p class="proj-desc">Multi-tenant clinic management SaaS — appointments, billing, an AI chat assistant, WhatsApp booking.</p>
+              <ul class="proj-tags"><li>Rails 8.1</li><li>pgvector</li><li>Hotwire</li></ul>
+            </div>
+          </a>
+
+          <a class="proj-card will-animate" href="work/db-chat.html">
+            <div class="proj-thumb"><img src="work/img/db-chat/chat.png" alt="DB Chat conversation" loading="lazy"></div>
+            <div class="proj-body">
+              <span class="proj-status case">◆ Case study</span>
+              <h3 class="proj-title">DB Chat</h3>
+              <p class="proj-desc">Talk to any PostgreSQL database in plain English — RAG-based schema retrieval, read-only SQL generation.</p>
+              <ul class="proj-tags"><li>Rails 8.1</li><li>Groq</li><li>Ollama</li></ul>
+            </div>
+          </a>
+
+          <a class="proj-card will-animate" href="work/railshunt.html">
+            <div class="proj-thumb"><img src="work/img/railshunt/dashboard.png" alt="RailShunt dashboard" loading="lazy"></div>
+            <div class="proj-body">
+              <span class="proj-status case">◆ Case study</span>
+              <h3 class="proj-title">RailShunt</h3>
+              <p class="proj-desc">Job-matching platform scoring scraped postings against a resume across five weighted dimensions.</p>
+              <ul class="proj-tags"><li>Rails 7.2</li><li>OpenAI</li><li>Sidekiq</li></ul>
+            </div>
+          </a>
+
+          <a class="proj-card will-animate" href="work/fii-tracker.html">
+            <div class="proj-thumb"><img src="work/img/fii-tracker/dashboard.png" alt="FII Accumulation Tracker dashboard" loading="lazy"></div>
+            <div class="proj-body">
+              <span class="proj-status case">◆ Case study</span>
+              <h3 class="proj-title">FII Accumulation Tracker</h3>
+              <p class="proj-desc">A scheduled scrape → score → rank pipeline tracking institutional-investor accumulation in Indian equities.</p>
+              <ul class="proj-tags"><li>Rails 7.2</li><li>Sidekiq</li><li>Pundit</li></ul>
+            </div>
+          </a>
+
+          <a class="proj-card will-animate" href="work/creator-hub.html">
+            <div class="proj-thumb proj-thumb-code">
+              <pre>{
+  "platforms": [
+    { "name": "youtube",
+      "connected": true },
+    { "name": "instagram",
+      "connected": true }
+  ]
+}</pre>
+            </div>
+            <div class="proj-body">
+              <span class="proj-status case">◆ Case study</span>
+              <h3 class="proj-title">Creator Hub</h3>
+              <p class="proj-desc">Adapter-pattern API for publishing to multiple social platforms from one unified feed.</p>
+              <ul class="proj-tags"><li>Rails 7.1</li><li>JWT</li><li>REST API</li></ul>
+            </div>
+          </a>
+
+          <a class="proj-card will-animate" href="work/interactive-virtual-background.html">
+            <div class="proj-thumb"><img src="work/img/background/architecture.svg" alt="Interactive Virtual Background architecture" loading="lazy"></div>
+            <div class="proj-body">
+              <span class="proj-status poc">◆ Early POC</span>
+              <h3 class="proj-title">Interactive Virtual Background</h3>
+              <p class="proj-desc">A from-scratch system design for a cross-platform virtual camera with real-time segmentation.</p>
+              <ul class="proj-tags"><li>Electron</li><li>Three.js</li><li>MediaPipe</li></ul>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ SERVICES / HIRE ═══ -->
     <section id="hire" aria-labelledby="hire-h2">
       <div class="sec-wrap">
         <div class="sec-header">
           <div>
-            <p class="sec-label">05 — Available for Hire</p>
+            <p class="sec-label">06 — Available for Hire</p>
             <h2 id="hire-h2">Services <em>&amp; Engagement</em></h2>
           </div>
-          <span class="sec-count" aria-hidden="true">05</span>
+          <span class="sec-count" aria-hidden="true">06</span>
         </div>
 
         <div class="about-body" style="margin-bottom: clamp(32px,5vw,48px); max-width: 760px;">
@@ -1145,10 +1262,10 @@
       <div class="sec-wrap">
         <div class="sec-header">
           <div>
-            <p class="sec-label">06 — Common Questions</p>
+            <p class="sec-label">07 — Common Questions</p>
             <h2 id="faq-h2">Frequently <em>Asked</em></h2>
           </div>
-          <span class="sec-count" aria-hidden="true">06</span>
+          <span class="sec-count" aria-hidden="true">07</span>
         </div>
 
         <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
@@ -1218,10 +1335,10 @@
       <div class="sec-wrap">
         <div class="sec-header">
           <div>
-            <p class="sec-label">07 — Background</p>
+            <p class="sec-label">08 — Background</p>
             <h2 id="edu-h2" style="color:var(--paper)">Edu<em>cation</em></h2>
           </div>
-          <span class="sec-count" aria-hidden="true">07</span>
+          <span class="sec-count" aria-hidden="true">08</span>
         </div>
         <div class="edu-layout">
           <div class="edu-big">
@@ -1244,10 +1361,10 @@
       <div class="sec-wrap">
         <div class="sec-header">
           <div>
-            <p class="sec-label">08 — Hire Me</p>
+            <p class="sec-label">09 — Hire Me</p>
             <h2 id="contact-h2">Let's <em>Work Together</em></h2>
           </div>
-          <span class="sec-count" aria-hidden="true">08</span>
+          <span class="sec-count" aria-hidden="true">09</span>
         </div>
 
         <div class="contact-layout">

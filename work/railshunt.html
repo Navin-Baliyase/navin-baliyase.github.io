@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RailShunt — Navin Kumar</title>
+<meta name="description" content="Job-matching platform scoring scraped postings against a resume across five weighted dimensions, with pgvector embeddings and a full application pipeline.">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../index.html">Navin Kumar</a>
+    <a class="back" href="../index.html#projects">← All Projects</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="status case">◆ Technical case study</span>
+    <h1>RailShunt</h1>
+    <p class="dek">A Rails 7.2 job-matching platform that scrapes postings from real job boards on a schedule, scores each one against a resume across five weighted dimensions, and tracks applications through a full pipeline.</p>
+    <div class="cta-row"><a class="btn-outline" href="#screens">See screenshots ↓</a></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Why it's not deployed</p>
+    <h2>The scraper is the reason</h2>
+    <p class="lede">The scraper fans out across several real job boards on a Sidekiq-Cron schedule — great for a personal tool, not something to leave running unattended on a public demo. Every screenshot below is the real app, run locally against 190 actually-scraped postings and real computed match scores.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">How it works</p>
+    <h2>Five-dimension weighted scoring</h2>
+    <p class="lede">Every job gets scored against the user's profile, not just keyword-matched.</p>
+    <table class="stack">
+      <tr><td>Semantic — 30%</td><td>Cosine similarity between resume and job-description embeddings (pgvector)</td></tr>
+      <tr><td>Skills — 30%</td><td>Case-insensitive overlap against required + nice-to-have skills</td></tr>
+      <tr><td>Experience — 15%</td><td>Years of experience vs. seniority inferred from the title</td></tr>
+      <tr><td>Salary — 15%</td><td>Preferred range vs. posted range overlap</td></tr>
+      <tr><td>Location — 10%</td><td>Remote preference vs. posting's remote flag and location</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="screens">
+  <div class="wrap">
+    <p class="sec-label">Screenshots</p>
+    <h2>Real scraped jobs, real scores</h2>
+    <div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">localhost:3000/dashboard</span></div><img src="img/railshunt/dashboard.png" alt="RailShunt dashboard" loading="lazy"></div>
+    <p class="shot-cap">Dashboard — top matches by score, recent scraper-sync activity across 7 job sources</p>
+    <div class="shot-grid">
+      <div><div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">localhost:3000/applications</span></div><img src="img/railshunt/applications.png" alt="Applications pipeline" loading="lazy"></div><p class="shot-cap">Application pipeline — saved → applied → phone screen → interview → offer</p></div>
+      <div><div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">localhost:3000/analytics</span></div><img src="img/railshunt/analytics.png" alt="Analytics with skill demand" loading="lazy"></div><p class="shot-cap">Match distribution, funnel, and in-demand skills</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Engineering highlights</p>
+    <h2>What was actually hard here</h2>
+    <div class="highlight">
+      <h4>Upsert, not create, for match scores</h4>
+      <p>Every resume update re-scores against every job — without an upsert on <code class="k">[user_id, job_posting_id]</code>, that's an unbounded pile of stale duplicate rows instead of one row per pair that stays current.</p>
+    </div>
+    <div class="highlight">
+      <h4>Pluggable scrapers, resolved by string</h4>
+      <p>Each job source stores its scraper class as a string constant, resolved at runtime. Adding a new job board is a new scraper class plus a new row — no changes to the fan-out job itself.</p>
+    </div>
+    <div class="highlight">
+      <h4>Separate queues for separate failure domains</h4>
+      <p>Scraping, embeddings, and scoring run on distinct Sidekiq queues with independent concurrency limits — a slow scraper can't starve the scoring pipeline of workers.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Tech stack</p>
+    <table class="stack">
+      <tr><td>Framework</td><td>Ruby on Rails 7.2</td></tr>
+      <tr><td>Database</td><td>PostgreSQL + pgvector</td></tr>
+      <tr><td>Embeddings</td><td>OpenAI — resume + job-description embeddings, cover letters</td></tr>
+      <tr><td>Background jobs</td><td>Sidekiq + Sidekiq-Cron</td></tr>
+      <tr><td>Frontend</td><td>Hotwire, ActionCable for live activity events</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer class="bottom">
+  <div class="wrap">
+    <span>Application source is maintained privately — this page is a public technical overview.</span>
+    <a href="../index.html#projects">← All Projects</a>
+  </div>
+</footer>
+
+</body>
+</html>
