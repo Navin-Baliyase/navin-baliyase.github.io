@@ -559,8 +559,6 @@
     .proj-card.will-animate.vis { opacity: 1; transform: translateY(0); }
     .proj-thumb { aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid var(--border); background: var(--cream); }
     .proj-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
-    .proj-thumb-code { background: var(--ink); padding: 18px 20px; }
-    .proj-thumb-code pre { margin: 0; font-family: var(--mono); font-size: 10.5px; line-height: 1.6; color: var(--amber-l); white-space: pre; }
     .proj-body { padding: 20px 22px 22px; }
     .proj-status { font-family: var(--mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
     .proj-status.live { color: #4caf50; }
@@ -1118,21 +1116,12 @@
           </a>
 
           <a class="proj-card will-animate" href="work/creator-hub.html">
-            <div class="proj-thumb proj-thumb-code">
-              <pre>{
-  "platforms": [
-    { "name": "youtube",
-      "connected": true },
-    { "name": "instagram",
-      "connected": true }
-  ]
-}</pre>
-            </div>
+            <div class="proj-thumb"><img src="work/img/creator-hub/thumb.jpg" alt="Creator Hub dashboard" loading="lazy"></div>
             <div class="proj-body">
               <span class="proj-status case">◆ Case study</span>
               <h3 class="proj-title">Creator Hub</h3>
-              <p class="proj-desc">Adapter-pattern API for publishing to multiple social platforms from one unified feed.</p>
-              <ul class="proj-tags"><li>Rails 7.1</li><li>JWT</li><li>REST API</li></ul>
+              <p class="proj-desc">AI-powered social media management — a content studio, Auto Pilot week planning, and a unified API across six platforms.</p>
+              <ul class="proj-tags"><li>Rails 7.1</li><li>Sidekiq</li><li>JWT</li></ul>
             </div>
           </a>
 

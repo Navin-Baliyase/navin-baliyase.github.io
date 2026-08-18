@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Creator Hub — Navin Kumar</title>
-<meta name="description" content="An adapter-pattern Rails API for managing and publishing to multiple social platforms from one unified feed.">
+<meta name="description" content="An AI-powered social media management platform — a content studio, week-ahead Auto Pilot planning, and a unified adapter-pattern API across six platforms.">
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -23,45 +23,51 @@
   <div class="wrap">
     <span class="status case">◆ Technical case study</span>
     <h1>Creator Hub</h1>
-    <p class="dek">A production-shaped Rails API for connecting multiple social media accounts and publishing to all of them through one interface — an adapter pattern hiding four very different platform APIs behind one shape.</p>
-    <div class="cta-row"><a class="btn-outline" href="#api">Real API responses ↓</a></div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <p class="sec-label">Why no screenshots</p>
-    <h2>It's an API — there's no UI</h2>
-    <p class="lede">The examples below are real responses from the running app (JWT-authenticated, hitting an actual local instance), with account-identifying details replaced by placeholders before publishing anything here.</p>
+    <p class="dek">An AI-powered social media management platform — connect YouTube, Instagram, Twitter, LinkedIn, TikTok, and Facebook, then run everything from one dashboard: an AI content studio, a week-ahead Auto Pilot planner, and a growth playbook generator, all sitting on top of an adapter-pattern API.</p>
+    <div class="cta-row"><a class="btn-outline" href="#screens">See it work ↓</a></div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
     <p class="sec-label">How it works</p>
-    <h2>One adapter interface, four platforms</h2>
-    <p class="lede">Every platform — YouTube, Instagram, Twitter/X, LinkedIn — implements the same adapter interface (connect, publish, fetch stats). The rest of the app never branches on which platform it's talking to.</p>
+    <h2>One adapter interface, six platforms</h2>
+    <p class="lede">Every platform — YouTube, Instagram, Twitter/X, LinkedIn, TikTok, Facebook — implements the same adapter interface (connect, publish, fetch stats). Everything built on top of it — the dashboard, the Content Studio, Auto Pilot, analytics — never branches on which platform it's talking to.</p>
   </div>
 </section>
 
-<section class="block" id="api">
+<section class="block" id="screens">
   <div class="wrap">
-    <p class="sec-label">Real API responses</p>
-    <h2>GET /api/v1/platforms</h2>
-    <p class="lede">Connection status across every linked platform, in one call.</p>
-<pre class="code">{
-  "platforms": [
-    { "name": "youtube",   "connected": true, "connected_at": "2026-05-23T06:58:44Z",
-      "profile": { "name": "Demo Creator", "followers": 1204 } },
-    { "name": "instagram", "connected": true, "connected_at": "2026-05-23T07:08:55Z" },
-    { "name": "twitter",   "connected": true, "connected_at": "2026-05-21T19:15:08Z" },
-    { "name": "linkedin",  "connected": false }
-  ]
-}</pre>
+    <p class="sec-label">See it work</p>
+    <h2>Dashboard, Content Studio, analytics</h2>
+    <p class="lede">The GIF below clicks through the dashboard (5 connected platforms, 22 published posts), the AI Content Studio's Auto Pilot tab (generates a full week of posts across platforms for review and approval), and the analytics view.</p>
+    <div class="frame"><div class="chrome"><span class="dot a"></span><span class="dot b"></span><span class="dot c"></span><span class="url">localhost:3000/dashboard</span></div><img src="img/creator-hub/demo.gif" alt="Creator Hub walkthrough — dashboard, content studio, analytics" loading="lazy"></div>
+    <p class="shot-cap">Dashboard → Content Studio (Auto Pilot) → analytics</p>
+  </div>
+</section>
 
-    <h2 style="margin-top:36px">GET /api/v1/analytics</h2>
-    <p class="lede">A real response, including a platform whose token had actually expired — handled per-platform, not a hypothetical error case.</p>
-<pre class="code">{
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">The Content Studio</p>
+    <h2>Five AI tools, one workspace</h2>
+    <table class="stack">
+      <tr><td>Video Studio</td><td>Upload a video/image, AI writes the caption and hashtags, post to any connected platform with a live phone-preview</td></tr>
+      <tr><td>AI Creator Flow</td><td>A guided multi-step content creation flow</td></tr>
+      <tr><td>Growth Coach</td><td>A personalised playbook — 5 tactics, posting cadence, engagement tips — from platform, niche, and follower count</td></tr>
+      <tr><td>Hashtag Lab</td><td>Hashtag research and optimisation</td></tr>
+      <tr><td>Auto Pilot</td><td>Generates a 7-day content calendar, one post per platform per day, for review and one-click approval</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <p class="sec-label">Underneath it</p>
+    <h2>A real, sanitized API response</h2>
+    <p class="lede">The dashboard and Studio are themselves clients of the same JSON API — account-identifying details replaced with placeholders before publishing anything here.</p>
+<pre class="code">GET /api/v1/analytics
+
+{
   "analytics": [
     { "platform": "instagram", "stats": null,
       "error": "API error 400: OAuthException — session expired" },
@@ -70,6 +76,7 @@
     { "platform": "youtube",  "stats": { "views": 1542, "subscribers": 1204, "videos": 5 }, "source": "live" }
   ]
 }</pre>
+    <p class="shot-cap">A real response, including a platform whose token had actually expired — handled per-platform, not a hypothetical error case</p>
   </div>
 </section>
 
@@ -79,11 +86,15 @@
     <h2>What was actually hard here</h2>
     <div class="highlight">
       <h4>One dead platform shouldn't fail the whole response</h4>
-      <p>Each platform's stats fetch is rescued independently and reported as a per-item <code class="k">error</code> field rather than the whole request 500ing because one of four platforms is unreachable.</p>
+      <p>Each platform's stats fetch is rescued independently and reported as a per-item <code class="k">error</code> field rather than the whole request 500ing because one of six platforms is unreachable — visible above with Instagram's expired token.</p>
     </div>
     <div class="highlight">
       <h4>A syntax bug that had been a hard 500 for a while</h4>
       <p><code class="k">cp.stats_synced_at&.&gt; 30.minutes.ago</code> looks like it should work, but Ruby can't parse an operator method call through <code class="k">&.</code> without explicit parentheses. Found while exercising this project for this portfolio — the analytics endpoint was a guaranteed 500 for every request. Fixed to a plain <code class="k">&&</code> check.</p>
+    </div>
+    <div class="highlight">
+      <h4>Auto Pilot has to plan a week without publishing it</h4>
+      <p>Generating a full week of posts across platforms and letting the user review/edit/reject each one before anything goes live means the AI-generated plan has to exist as real, editable records from the moment it's generated — not a preview string — so approval is just a status flip, not a second generation pass.</p>
     </div>
     <div class="highlight">
       <h4>JWT auth returned via header, not body</h4>
@@ -96,10 +107,11 @@
   <div class="wrap">
     <p class="sec-label">Tech stack</p>
     <table class="stack">
-      <tr><td>Framework</td><td>Ruby on Rails 7.1 (API-only)</td></tr>
+      <tr><td>Framework</td><td>Ruby on Rails 7.1</td></tr>
       <tr><td>Database</td><td>PostgreSQL 16</td></tr>
       <tr><td>Cache / jobs</td><td>Redis 7, Sidekiq 7</td></tr>
       <tr><td>Auth</td><td>Devise + JWT</td></tr>
+      <tr><td>AI</td><td>Content generation for captions, hashtags, growth playbooks, and Auto Pilot's week plan</td></tr>
     </table>
   </div>
 </section>
